@@ -30,9 +30,9 @@ func JoinStrings(str1, str2 string) string {
 func RaiseToThePower(n, p int) int {
 	if p == 0 {
 		return 1
-	}else if p == 1{
+	} else if p == 1 {
 		return n
-	}else{
+	} else {
 		powerRes := 0
 		for i := 1; i < p; i++ {
 			powerRes += n * n
@@ -48,7 +48,7 @@ func IsBiggerThan42(n int) bool {
 func CelsiusToFahrenheit(c float64) float64 {
 	//  °F = (°C x 1.8) + 32
 	f := (c * 1.8) + 32
-	roundToTwo := math.Round(f * 100) / 100
+	roundToTwo := math.Round(f*100) / 100
 	return roundToTwo
 }
 
@@ -60,7 +60,16 @@ func IsMillenial(y uint16) bool {
 
 /* ------- Section B ------- */
 
-// func ReadTrafficLight() {}
+func ReadTrafficLight(s string) string {
+	tL := strings.ToLower(s)
+	if tL == "red" {
+		return "STOP!"
+	} else if tL == "amber" {
+		return "GET READY..."
+	} else {
+		return "GO!"
+	}
+}
 
 // func PassOrFail() {}
 
