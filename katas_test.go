@@ -163,9 +163,27 @@ func TestReadTrafficLight(t *testing.T) {
 		assert.String(t, got, want)
 	})
 
-	t.Run("is case sensitive", func(t *testing.T) {
+	t.Run("is case insensitive", func(t *testing.T) {
 		got := katas.ReadTrafficLight("AMBER")
 		want := "GET READY..."
+		assert.String(t, got, want)
+	})
+}
+
+func TestPassOrFail(t *testing.T) {
+	t.Run("returns string Fail if student scores less than 60% on exam", func(t *testing.T) {
+		got := katas.PassOrFail(10, 20)
+		want := "Fail"
+		assert.String(t, got, want)
+	})
+	t.Run("returns string Pass if student scores 60% or more on exam", func(t *testing.T) {
+		got := katas.PassOrFail(60, 100)
+		want := "Pass"
+		assert.String(t, got, want)
+	})
+	t.Run("returns string Top marks! if student scores 100% on exam", func(t *testing.T) {
+		got := katas.PassOrFail(100, 100)
+		want := "Top marks!"
 		assert.String(t, got, want)
 	})
 }

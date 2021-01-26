@@ -71,7 +71,17 @@ func ReadTrafficLight(s string) string {
 	}
 }
 
-// func PassOrFail() {}
+func PassOrFail(c, t int) string {
+	if c == t {
+		return "Top marks!"
+	}
+	p := float64(c) / float64(t)
+	if p < .6 {
+		return "Fail"
+	} else {
+		return "Pass"
+	}
+}
 
 // func TitleCaseString() {}
 
