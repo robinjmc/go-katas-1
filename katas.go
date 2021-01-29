@@ -83,11 +83,31 @@ func PassOrFail(c, t int) string {
 	}
 }
 
-// func TitleCaseString() {}
+func TitleCaseString(t string) string {
+	return strings.Title(t)
+}
 
-// func SumEvensTo() {}
+func SumEvensTo(n int) int {
+	s := 0
+	for i := 0; i <= n; i++ {
+		if i%2 == 0 {
+			s += i
+		}
+	}
+	return s
+}
 
-// func CheckInfinitive() {}
+func CheckInfinitive(v string) bool {
+	if strings.HasSuffix(v, "er") {
+		return true
+	} else if strings.HasSuffix(v, "re") {
+		return true
+	} else if strings.HasSuffix(v, "ir") {
+		return true
+	} else {
+		return false
+	}
+}
 
 // func HugsAndKisses() {}
 

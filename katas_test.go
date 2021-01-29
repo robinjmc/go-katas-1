@@ -187,3 +187,76 @@ func TestPassOrFail(t *testing.T) {
 		assert.String(t, got, want)
 	})
 }
+
+func TestTitleCaseString(t *testing.T) {
+	t.Run("Capitalizes the first letter of a single word", func(t *testing.T) {
+		got := katas.TitleCaseString("gopher")
+		want := "Gopher"
+		assert.String(t, got, want)
+	})
+	t.Run("Capitalizes the first letter of each word in a sentence", func(t *testing.T) {
+		got := katas.TitleCaseString("thunderbirds are go")
+		want := "Thunderbirds Are Go"
+		assert.String(t, got, want)
+	})
+}
+
+func TestSumEvensTo(t *testing.T) {
+	t.Run("returns 0 when passed 1", func(t *testing.T) {
+		got := katas.SumEvensTo(1)
+		want := 0
+		assert.Int(t, got, want)
+	})
+	t.Run("returns 12 when passed 6", func(t *testing.T) {
+		got := katas.SumEvensTo(6)
+		want := 12
+		assert.Int(t, got, want)
+	})
+	t.Run("returns 56 when passed 14", func(t *testing.T) {
+		got := katas.SumEvensTo(14)
+		want := 56
+		assert.Int(t, got, want)
+	})
+}
+
+func TestCheckInfinitive(t *testing.T) {
+	t.Run("returns false if word is not an infinitive french verb", func(t *testing.T) {
+		t.Run("est", func(t *testing.T) {
+			got := katas.CheckInfinitive("est")
+			want := false
+			assert.Bool(t, got, want)
+		})
+		t.Run("suis", func(t *testing.T) {
+			got := katas.CheckInfinitive("suis")
+			want := false
+			assert.Bool(t, got, want)
+		})
+		t.Run("allez", func(t *testing.T) {
+			got := katas.CheckInfinitive("allez")
+			want := false
+			assert.Bool(t, got, want)
+		})
+	})
+	t.Run("returns true if word is an infinitive french verb", func(t *testing.T) {
+		t.Run("manger", func(t *testing.T) {
+			got := katas.CheckInfinitive("manger")
+			want := true
+			assert.Bool(t, got, want)
+		})
+		t.Run("être", func(t *testing.T) {
+			got := katas.CheckInfinitive("être")
+			want := true
+			assert.Bool(t, got, want)
+		})
+		t.Run("aller", func(t *testing.T) {
+			got := katas.CheckInfinitive("aller")
+			want := true
+			assert.Bool(t, got, want)
+		})
+		t.Run("dormir", func(t *testing.T) {
+			got := katas.CheckInfinitive("dormir")
+			want := true
+			assert.Bool(t, got, want)
+		})
+	})
+}
