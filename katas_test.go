@@ -260,3 +260,50 @@ func TestCheckInfinitive(t *testing.T) {
 		})
 	})
 }
+
+func TestHugsAndKisses(t *testing.T) {
+	t.Run("passes in 1 and returns x", func(t *testing.T) {
+		got := katas.HugsAndKisses(1)
+		want := "x"
+		assert.String(t, got, want)
+	})
+	t.Run("passes in 2 and returns xo", func(t *testing.T) {
+		got := katas.HugsAndKisses(2)
+		want := "xo"
+		assert.String(t, got, want)
+	})
+	t.Run("passes in a number and returns the appropriate amount of hugs and kisses", func(t *testing.T) {
+		got := katas.HugsAndKisses(5)
+		want := "xoxox"
+		assert.String(t, got, want)
+	})
+}
+
+func TestFizzBuzz(t *testing.T) {
+	t.Run("returns ... when passed a number which is not divisible by 3 nor 5", func(t *testing.T) {
+		got := katas.FizzBuzz(1)
+		want := "..."
+		assert.String(t, got, want)
+	})
+	t.Run("returns fizz! when passed a number which is divisible by 3 ", func(t *testing.T) {
+		got := katas.FizzBuzz(6)
+		want := "fizz!"
+		assert.String(t, got, want)
+	})
+	t.Run("returns buzz! when passed a number which is divisible by 5 ", func(t *testing.T) {
+		got := katas.FizzBuzz(25)
+		want := "buzz!"
+		assert.String(t, got, want)
+	})
+	t.Run("returns fizzbuzz! when passed a number which is divisible by 5 and 3", func(t *testing.T) {
+		got := katas.FizzBuzz(30)
+		want := "fizzbuzz!"
+		assert.String(t, got, want)
+	})
+}
+
+func CountTheVowels(t *testing.T) {
+	t.Run("returns 1 when passed a string with one vowel present", func(t *testing.T) {
+
+	})
+}

@@ -109,9 +109,31 @@ func CheckInfinitive(v string) bool {
 	}
 }
 
-// func HugsAndKisses() {}
+func HugsAndKisses(n int) string {
+	var hK string
+	for i := 0; i < n; i++ {
+		if i%2 == 0 {
+			hK += "x"
+		} else {
+			hK += "o"
+		}
+	}
+	return hK
+}
 
-// func Fizzbuzz() {}
+func FizzBuzz(n int) string {
+	isFizz := n%3 == 0
+	isBuzz := n%5 == 0
+	if isFizz && isBuzz {
+		return "fizzbuzz!"
+	} else if isFizz {
+		return "fizz!"
+	} else if isBuzz {
+		return "buzz!"
+	} else {
+		return "..."
+	}
+}
 
 // func CountTheVowels() {}
 
