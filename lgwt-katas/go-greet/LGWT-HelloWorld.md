@@ -1,0 +1,1 @@
+This is my implementation of the Hello, World kata from Chris James' Learn go with tests (https://quii.gitbook.io/learn-go-with-tests/go-fundamentals/hello-world)
